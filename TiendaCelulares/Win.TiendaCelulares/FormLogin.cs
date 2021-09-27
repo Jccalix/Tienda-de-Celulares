@@ -22,5 +22,29 @@ namespace Win.TiendaCelulares
             Application.Exit();
 
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string usuario;
+            string contrasena;
+
+            usuario = textBox1.Text;
+            contrasena = textBox2.Text;
+
+            if (usuario == "admin" && contrasena == "123" )
+            {
+                this.Close();
+
+            }
+            else
+            {
+                MessageBox.Show("Usuario o contrasena incorrecta");
+            }
+        }
     }
 }

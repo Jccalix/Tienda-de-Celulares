@@ -29,6 +29,11 @@ namespace Win.TiendaCelulares
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Login();
+        }
+
+        private void Login()
+        {
             var formLogin = new FormLogin();
             formLogin.ShowDialog();
         }
@@ -39,6 +44,27 @@ namespace Win.TiendaCelulares
             formProductos.MdiParent = this;
             formProductos.Show();
 
+        }
+
+        private void FormMenu_Load(object sender, EventArgs e)
+        {
+            Login();
+
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formClientes = new FormClientes();
+            formClientes.MdiParent = this;
+            formClientes.Show();
+                   
+        }
+
+        private void ventasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var formVentas = new FormVentas();
+            formVentas.MdiParent = this;
+            formVentas.Show();
         }
     }
 }
