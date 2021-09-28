@@ -66,5 +66,27 @@ namespace Win.TiendaCelulares
             formVentas.MdiParent = this;
             formVentas.Show();
         }
+
+        private void transeferenciasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formTransferencias = new FormTransferencias();
+            formTransferencias.MdiParent = this;
+            formTransferencias.Show();
+        }
+
+        private void reporteDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formReportedeproductos = new FormReportedeproductos();
+            formReportedeproductos.MdiParent = this;
+            formReportedeproductos.Show();
+
+        }
+
+        private void reporteDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formReportedeclientes = new FormReportedeclientes();
+            formReportedeclientes.MdiParent = this;
+            formReportedeclientes.Show();
+        }
     }
 }

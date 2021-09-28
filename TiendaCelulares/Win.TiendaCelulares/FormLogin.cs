@@ -36,7 +36,7 @@ namespace Win.TiendaCelulares
             usuario = textBox1.Text;
             contrasena = textBox2.Text;
 
-            if (usuario == "admin" && contrasena == "123" )
+            if (usuario == "admin" && contrasena == "123" || usuario == "invitado" && contrasena == "123")
             {
                 this.Close();
 
@@ -45,6 +45,11 @@ namespace Win.TiendaCelulares
             {
                 MessageBox.Show("Usuario o contrasena incorrecta");
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -70,6 +70,24 @@
     <Compile Include="FormProductos.Designer.cs">
       <DependentUpon>FormProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormReportedeclientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportedeclientes.Designer.cs">
+      <DependentUpon>FormReportedeclientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportedeproductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportedeproductos.Designer.cs">
+      <DependentUpon>FormReportedeproductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTransferencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTransferencias.Designer.cs">
+      <DependentUpon>FormTransferencias.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +107,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormProductos.resx">
       <DependentUpon>FormProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportedeproductos.resx">
+      <DependentUpon>FormReportedeproductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTransferencias.resx">
+      <DependentUpon>FormTransferencias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormVentas.resx">
       <DependentUpon>FormVentas.cs</DependentUpon>
@@ -118,6 +142,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

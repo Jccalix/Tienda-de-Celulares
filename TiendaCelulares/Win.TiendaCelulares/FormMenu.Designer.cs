@@ -98,12 +98,14 @@
             this.reporteDeProductosToolStripMenuItem.Name = "reporteDeProductosToolStripMenuItem";
             this.reporteDeProductosToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.reporteDeProductosToolStripMenuItem.Text = "Reporte de Productos";
+            this.reporteDeProductosToolStripMenuItem.Click += new System.EventHandler(this.reporteDeProductosToolStripMenuItem_Click);
             // 
             // reporteDeClientesToolStripMenuItem
             // 
             this.reporteDeClientesToolStripMenuItem.Name = "reporteDeClientesToolStripMenuItem";
             this.reporteDeClientesToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.reporteDeClientesToolStripMenuItem.Text = "Reporte de Clientes";
+            this.reporteDeClientesToolStripMenuItem.Click += new System.EventHandler(this.reporteDeClientesToolStripMenuItem_Click);
             // 
             // reporteDeVentasToolStripMenuItem
             // 
@@ -141,6 +143,7 @@
             this.transeferenciasToolStripMenuItem.Name = "transeferenciasToolStripMenuItem";
             this.transeferenciasToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.transeferenciasToolStripMenuItem.Text = "Transeferencias";
+            this.transeferenciasToolStripMenuItem.Click += new System.EventHandler(this.transeferenciasToolStripMenuItem_Click);
             // 
             // facturasToolStripMenuItem
             // 
