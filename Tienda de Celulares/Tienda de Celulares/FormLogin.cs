@@ -51,5 +51,10 @@ namespace Tienda_de_Celulares
                 MessageBox.Show("Usuario o contraseña incorrecta");
             }
         }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

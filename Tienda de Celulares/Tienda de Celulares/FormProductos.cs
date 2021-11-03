@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,18 +15,36 @@ namespace Tienda_de_Celulares
     public partial class FormProductos : Form
     {
         ProductosBL _productos;
+        CategoriasBL _categorias;
+        TiposBL _tiposBL;
         public FormProductos()
         {
             InitializeComponent();
 
             _productos = new ProductosBL();
             listaProductosBindingSource.DataSource = _productos.ObtenerProductos();
+
+            _categorias = new CategoriasBL();
+            listaCategoriasBindingSource.DataSource = _categorias.ObtenerCategorias();
+
+            _tiposBL = new TiposBL();
+            listaTiposBindingSource.DataSource = _tiposBL.ObtenerTipos();
+
         }
 
         private void listaProductosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             listaProductosBindingSource.EndEdit();
             var producto = (Producto) listaProductosBindingSource.Current;
+
+            if (fotoPictureBox.Image != null)
+            {
+                producto.Foto = Program.imageToByteArray(fotoPictureBox.Image);
+            }
+            else
+            {
+                producto.Foto = null;
+            }
 
             var resultado = _productos.GuardarProducto(producto);
 
@@ -34,6 +53,7 @@ namespace Tienda_de_Celulares
 
                 listaProductosBindingSource.ResetBindings(false);
                 DeshabilitarHabilitarBotones(true);
+                MessageBox.Show("Producto Guardado");
             }
             else
             {
@@ -97,6 +117,40 @@ namespace Tienda_de_Celulares
         {
             DeshabilitarHabilitarBotones(true);
             Eliminar(0);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var producto = (Producto)listaProductosBindingSource.Current;
+
+            if (producto != null)
+            {
+                openFileDialog1.ShowDialog();
+                var archivo = openFileDialog1.FileName;
+
+                if (archivo != "")
+                {
+                    var fileInfo = new FileInfo(archivo);
+                    var fileStream = fileInfo.OpenRead();
+
+                    fotoPictureBox.Image = Image.FromStream(fileStream);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Cree un producto antes de asignarle una imagen");
+            }
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            fotoPictureBox.Image = null;
+        }
+
+        private void FormProductos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
